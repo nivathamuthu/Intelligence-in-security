@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: farmer_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: farmer
+      POSTGRES_PASSWORD: farmer
+      POSTGRES_DB: farmer_cart
+    volumes:
+      - farmer_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U farmer -d farmer_cart"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  farmer_pg_data:
