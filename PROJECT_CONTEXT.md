@@ -12,6 +12,7 @@ Stack:
   session id (UUID) generated in the browser on first visit, stored in
   localStorage as "cart_session_id", and sent on every cart request as an
   "X-Cart-Session" header.
+  <!-- ncvxkzzm -->
 
 Modules already completed:
 - [x] Module 0 — Project scaffolding
